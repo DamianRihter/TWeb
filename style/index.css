@@ -51,14 +51,18 @@ img{ max-width:100%; display:block; }
 .brand{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:18px;
   font-weight:850;
   letter-spacing:.2px;
+  white-space:nowrap;
 }
 .logo{
-  width:34px;height:34px;border-radius:12px;
+  width:34px;
+  height:34px;
+  border-radius:12px;
   background: linear-gradient(135deg, rgba(124,92,255,1), rgba(45,212,191,1));
   box-shadow: 0 12px 28px rgba(124,92,255,.22);
+  flex-shrink:0; 
 }
 .nav{
   display:flex;
@@ -338,7 +342,6 @@ img{ max-width:100%; display:block; }
   .twoCols{ grid-template-columns: 1fr; }
   .sectionImage img{ height: 240px; }
 }
-/* ===== GLOBAL NAV (adăugat) ===== */
 .global-nav{
   width:100%;
   background: rgba(11,15,26,0.95);
@@ -368,4 +371,23 @@ img{ max-width:100%; display:block; }
 }
 @media (max-width:800px){
   .global-nav{ gap:12px; padding:8px 6px; overflow:auto; white-space:nowrap; }
+}
+
+.service{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.service p{
+  max-width:600px;
+}
+
+.infoRow{
+  justify-content:center;
+}
+
+.service h3{
+  margin-top:18px;
 }

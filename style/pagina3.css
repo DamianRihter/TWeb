@@ -54,11 +54,13 @@ img{ max-width:100%; display:block; }
   gap:10px;
   font-weight:850;
   letter-spacing:.2px;
+  white-space:nowrap;
 }
 .logo{
   width:34px;height:34px;border-radius:12px;
   background: linear-gradient(135deg, rgba(45,212,191,1), rgba(124,92,255,1));
   box-shadow: 0 12px 28px rgba(45,212,191,.16);
+  flex-shrink:0;  
 }
 .nav{
   display:flex;
@@ -293,7 +295,6 @@ img{ max-width:100%; display:block; }
   .promo{ min-height: unset; }
   .promoMedia{ height: 240px; }
 }
-/* ===== GLOBAL NAV (adăugat) ===== */
 .global-nav{
   width:100%;
   background: rgba(11,15,26,0.95);
