@@ -391,3 +391,74 @@ img{ max-width:100%; display:block; }
 .service h3{
   margin-top:18px;
 }
+
+
+.apple-footer{
+  margin-top:40px;
+  padding:40px 20px 20px;
+  border-top:1px solid var(--stroke);
+  background:rgba(0,0,0,0.25);
+}
+
+.apple-footer-inner{
+  max-width:var(--max);
+  margin:0 auto;
+}
+
+.apple-grid{
+  display:grid;
+  grid-template-columns: repeat(6,1fr);
+  gap:30px;
+}
+
+.apple-col{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:14px;
+}
+
+.apple-col h4{
+  margin:0 0 6px;
+  font-size:13px;
+  color:#fff;
+  font-weight:700;
+}
+
+.apple-col a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+  transition:.15s;
+}
+
+.apple-col a:hover{
+  color:#fff;
+  text-decoration:underline;
+}
+
+.apple-col .mt{
+  margin-top:14px;
+}
+
+.apple-bottom{
+  margin-top:30px;
+  padding-top:18px;
+  border-top:1px solid var(--stroke);
+  color:var(--muted2);
+  font-size:13px;
+  text-align:center;
+}
+
+@media (max-width:1000px){
+  .apple-grid{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media (max-width:600px){
+  .apple-grid{
+    grid-template-columns: repeat(2,1fr);
+    gap:22px;
+  }
+}
