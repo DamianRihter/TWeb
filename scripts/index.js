@@ -16,53 +16,51 @@ document.querySelectorAll(".cat").forEach(card=>{
   });
 });
 
-
 // Progres bar la scroll
-const bar=document.createElement("div");
-bar.style.position="fixed";
-bar.style.top="0";
-bar.style.left="0";
-bar.style.height="3px";
-bar.style.width="0%";
-bar.style.zIndex="999999";
-bar.style.background="linear-gradient(90deg,#7c5cff,#2dd4bf)";
+const bar = document.createElement("div");
+bar.style.position = "fixed";
+bar.style.top = "0";
+bar.style.left = "0";
+bar.style.height = "3px";
+bar.style.width = "0%";
+bar.style.zIndex = "999999";
+bar.style.background = "linear-gradient(90deg,#7c5cff,#2dd4bf)";
 document.body.appendChild(bar);
 
-window.addEventListener("scroll",()=>{
-  const scrolled=window.scrollY;
-  const height=document.documentElement.scrollHeight-window.innerHeight;
-  bar.style.width=(scrolled/height)*100+"%";
+window.addEventListener("scroll", ()=>{
+  const scrolled = window.scrollY;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = (scrolled / height) * 100 + "%";
 });
 
-
 // Cate un element pe lista
-document.querySelectorAll(".list li").forEach((li,i)=>{
-  li.style.opacity="0";
-  li.style.transform="translateY(10px)";
+document.querySelectorAll(".list li").forEach((li, i)=>{
+  li.style.opacity = "0";
+  li.style.transform = "translateY(10px)";
   setTimeout(()=>{
-    li.style.transition="all .4s ease";
-    li.style.opacity="1";
-    li.style.transform="none";
-  }, i*70);
+    li.style.transition = "all .4s ease";
+    li.style.opacity = "1";
+    li.style.transform = "none";
+  }, i * 70);
 });
 
 // Glow pe butoane
 document.querySelectorAll(".btn, .infoPill").forEach(el=>{
-  el.addEventListener("mousemove",e=>{
-    const r=el.getBoundingClientRect();
-    const x=e.clientX-r.left;
-    const y=e.clientY-r.top;
+  el.addEventListener("mousemove", e=>{
+    const r = el.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
 
-    el.style.background=
+    el.style.background =
       `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,.15), rgba(255,255,255,.03) 40%)`;
   });
 
-  el.addEventListener("mouseleave",()=>{
-    el.style.background="";
+  el.addEventListener("mouseleave", ()=>{
+    el.style.background = "";
   });
 });
 
-//Pulsare la buton
+// Pulsare la buton
 document.querySelectorAll("button, a").forEach(el => {
   el.addEventListener("mouseenter", () => {
     el.style.transform = "scale(1.08)";
@@ -74,18 +72,20 @@ document.querySelectorAll("button, a").forEach(el => {
   });
 });
 
-//Logare + Inregistrare
+// Logare + Inregistrare
 const loginBtn = document.getElementById("loginBtn");
 const loginModal = document.getElementById("loginModal");
 const closeLogin = document.getElementById("closeLogin");
 const authTabs = document.querySelectorAll(".auth-tab");
 const forms = document.querySelectorAll(".login-form");
 
-if (loginBtn && loginModal && closeLogin) {
+if (loginBtn && loginModal) {
   loginBtn.addEventListener("click", () => {
     loginModal.classList.add("active");
   });
+}
 
+if (closeLogin && loginModal) {
   closeLogin.addEventListener("click", () => {
     loginModal.classList.remove("active");
   });

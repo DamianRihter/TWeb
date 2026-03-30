@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="style/index.css">
   <script src="scripts/index.js" defer></script>
 </head>
+<body>
 
-<main>
   <header class="topbar">
     <div class="wrap">
       <div class="brand">
@@ -21,59 +21,58 @@
       </div>
 
       <nav class="global-nav" aria-label="Navigare globală">
-        <a href="index.html" class="active">Acasă</a>
+        <a href="index.php" class="active">Acasă</a>
         <a href="pagina1.html">Produse</a>
         <a href="pagina2.html">Service</a>
         <a href="pagina3.html">Promoții</a>
         <a href="pagina4.html">Livrare</a>
-        <button id="loginBtn" class="login-btn" type="button">Logare</button>
+
+        <?php if (isset($_SESSION["username"])): ?>
+          <span class="login-btn user-display"><?php echo htmlspecialchars($_SESSION["username"]); ?></span>
+          <a href="logout.php" class="login-btn">Ieșire</a>
+        <?php else: ?>
+          <button id="loginBtn" class="login-btn" type="button">Logare</button>
+        <?php endif; ?>
       </nav>
     </div>
   </header>
 
+  <?php if (!isset($_SESSION["username"])): ?>
   <div id="loginModal" class="login-modal">
     <div class="login-box">
       <button id="closeLogin" class="close-login" type="button">&times;</button>
       <h2>Cont utilizator</h2>
 
       <div class="auth-switch">
-       <?php if (isset($_SESSION["username"])): ?>
-  <span class="login-btn" style="display:inline-flex;align-items:center;justify-content:center;cursor:default;">
-    <?php echo htmlspecialchars($_SESSION["username"]); ?>
-  </span>
-  <a href="logout.php" class="login-btn">Ieșire</a>
-<?php else: ?>
-  <button id="loginBtn" class="login-btn" type="button">Logare</button>
-<?php endif; ?>
-
+        <button type="button" class="auth-tab active" data-target="loginForm">Logare</button>
         <button type="button" class="auth-tab" data-target="registerForm">Înregistrare</button>
       </div>
 
       <form id="loginForm" class="login-form active" action="login.php" method="POST">
-  <label for="loginInput">Email sau Număr de telefon</label>
-  <input type="text" id="loginInput" name="email" placeholder="Introdu emailul sau numărul de telefon" required>
+        <label for="loginInput">Email sau Număr de telefon</label>
+        <input type="text" id="loginInput" name="email" placeholder="Introdu emailul sau numărul de telefon" required>
 
-  <label for="parola">Parolă</label>
-  <input type="password" id="parola" name="parola" placeholder="Introdu parola" required>
+        <label for="parola">Parolă</label>
+        <input type="password" id="parola" name="parola" placeholder="Introdu parola" required>
 
-  <button type="submit" class="submit-login">Loghează-te</button>
-</form>
+        <button type="submit" class="submit-login">Loghează-te</button>
+      </form>
 
-<form id="registerForm" class="login-form register-form" action="register.php" method="POST">
-  <label for="registerInput">Email sau Număr de telefon</label>
-  <input type="text" id="registerInput" name="email" placeholder="Introdu emailul sau numărul de telefon" required>
+      <form id="registerForm" class="login-form register-form" action="register.php" method="POST">
+        <label for="registerInput">Email sau Număr de telefon</label>
+        <input type="text" id="registerInput" name="email" placeholder="Introdu emailul sau numărul de telefon" required>
 
-  <label for="username">Nume de utilizator</label>
-  <input type="text" id="username" name="username" placeholder="Introdu numele de utilizator" required>
+        <label for="username">Nume de utilizator</label>
+        <input type="text" id="username" name="username" placeholder="Introdu numele de utilizator" required>
 
-  <label for="registerPassword">Parolă</label>
-  <input type="password" id="registerPassword" name="parola" placeholder="Creează parola" required>
+        <label for="registerPassword">Parolă</label>
+        <input type="password" id="registerPassword" name="parola" placeholder="Creează parola" required>
 
-  <button type="submit" class="submit-login">Înregistrează-te</button>
-</form>
+        <button type="submit" class="submit-login">Înregistrează-te</button>
       </form>
     </div>
   </div>
+  <?php endif; ?>
 
   <main class="container">
     <section class="hero">
@@ -222,8 +221,6 @@
   </main>
 
   <footer>
-    </section>
-
     <div class="apple-footer">
       <div class="apple-footer-inner">
 
@@ -293,8 +290,7 @@
 
       </div>
     </div>
-
   </footer>
-</main>
 
+</body>
 </html>
