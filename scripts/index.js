@@ -74,3 +74,24 @@ document.querySelectorAll("button, a").forEach(el => {
         el.style.transform = "scale(1)";
     });
 });
+
+//Logare
+const loginBtn = document.getElementById("loginBtn");
+const loginModal = document.getElementById("loginModal");
+const closeLogin = document.getElementById("closeLogin");
+
+if (loginBtn && loginModal && closeLogin) {
+  loginBtn.addEventListener("click", () => {
+    loginModal.classList.add("active");
+  });
+
+  closeLogin.addEventListener("click", () => {
+    loginModal.classList.remove("active");
+  });
+
+  loginModal.addEventListener("click", (e) => {
+    if (e.target === loginModal) {
+      loginModal.classList.remove("active");
+    }
+  });
+}

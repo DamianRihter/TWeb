@@ -9,31 +9,42 @@
   <script src="scripts/index.js" defer></script>
 </head>
 
-
-
-
 <main>
   <header class="topbar">
     <div class="wrap">
       <div class="brand">
         <div class="brand">
-  <img src="Imagini/23.jpg" alt="Apple Logo" class="logo">
-  <span>Apple Store</span>
-</div>
-
-
+          <img src="Imagini/23.jpg" alt="Apple Logo" class="logo">
+          <span>Apple Store</span>
+        </div>
       </div>
 
-<nav class="global-nav" aria-label="Navigare globală">
-  <a href="index.html" class="active">Acasă</a>
-  <a href="pagina1.html">Produse</a>
-  <a href="pagina2.html">Service</a>
-  <a href="pagina3.html">Promoții</a>
-  <a href="pagina4.html">Livrare</a>
-</nav>
-
+      <nav class="global-nav" aria-label="Navigare globală">
+        <a href="index.html" class="active">Acasă</a>
+        <a href="pagina1.html">Produse</a>
+        <a href="pagina2.html">Service</a>
+        <a href="pagina3.html">Promoții</a>
+        <a href="pagina4.html">Livrare</a>
+        <button id="loginBtn" class="login-btn" type="button">Logare</button>
+      </nav>
     </div>
   </header>
+
+  <div id="loginModal" class="login-modal">
+    <div class="login-box">
+      <button id="closeLogin" class="close-login" type="button">&times;</button>
+      <h2>Logare / Înregistrare</h2>
+
+      <form class="login-form">
+        <label for="loginInput">Email sau Număr de telefon</label>
+<input type="text" id="loginInput" name="loginInput" placeholder="Introdu emailul sau numărul de telefon" required>
+        <label for="parola">Parolă</label>
+        <input type="password" id="parola" name="parola" placeholder="Introdu parola" required>
+
+        <button type="submit" class="submit-login">Înregistrează-te</button>
+      </form>
+    </div>
+  </div>
 
   <main class="container">
     <section class="hero">
@@ -41,9 +52,9 @@
         <div>
           <h1>Apple Store</h1>
           <p>
-               Vă salută Service Centrul autorizat <strong>iSupport</strong>.
-        Prestăm servicii de cea mai înaltă calitate și oferim garanție pentru toate reparațiile.
-        Puteți lăsa dispozitivele în grija noastră cu încredere.
+            Vă salută Service Centrul autorizat <strong>iSupport</strong>.
+            Prestăm servicii de cea mai înaltă calitate și oferim garanție pentru toate reparațiile.
+            Puteți lăsa dispozitivele în grija noastră cu încredere.
             Magazin informativ pentru produsele Apple – iPhone, iPad, MacBook și Apple Watch.<br>
             Tehnologie premium, performanță și design modern.
           </p>
@@ -179,17 +190,10 @@
     </section>
 
     <hr class="divider" />
-    
   </main>
 
-
-
-
-
-
-
-<footer>
-      </section>
+  <footer>
+    </section>
 
     <div class="apple-footer">
       <div class="apple-footer-inner">
@@ -255,13 +259,13 @@
         </div>
 
         <div class="apple-bottom">
-          © 2026 Apple Store 
+          © 2026 Apple Store
         </div>
 
       </div>
     </div>
 
-</footer>
-</footer>
+  </footer>
+</main>
 
 </html>

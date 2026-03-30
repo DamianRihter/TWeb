@@ -6,18 +6,10 @@
   <title>Produse Apple</title>
   <link rel="icon" href="Imagini/23.jpg">
   <link rel="stylesheet" href="style/pagina1.css">
-    <script src="scripts/pagina1.js" defer></script>
-
+  <script src="scripts/pagina1.js" defer></script>
 </head>
 
-
-
-
-
-
-
 <main>
-  
   <header class="topbar">
     <div class="wrap">
       <div class="brand">
@@ -27,14 +19,31 @@
         </div>
       </div>
 
-<nav class="global-nav" aria-label="Navigare globală">
-  <a href="index.html">Acasă</a>
-  <a href="pagina1.html" class="active">Produse</a>
-  <a href="pagina2.html">Service</a>
-  <a href="pagina3.html">Promoții</a>
-  <a href="pagina4.html">Livrare</a>
-</nav>
+      <nav class="global-nav" aria-label="Navigare globală">
+        <a href="index.html">Acasă</a>
+        <a href="pagina1.html" class="active">Produse</a>
+        <a href="pagina2.html">Service</a>
+        <a href="pagina3.html">Promoții</a>
+        <a href="pagina4.html">Livrare</a>
 
+        <div class="cart-wrapper">
+          <button id="cartBtn" class="cart-btn" type="button">
+            Coș <span id="cartCount">0</span>
+          </button>
+
+          <div id="cartDropdown" class="cart-dropdown">
+            <h3>Coșul meu</h3>
+            <div id="cartItems" class="cart-items">
+              <p class="cart-empty">Coșul este gol.</p>
+            </div>
+            <div class="cart-footer">
+              <div class="cart-total">
+                Total: <span id="cartTotal">0 MDL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -58,7 +67,7 @@
     </section>
 
     <section class="grid">
-      <article class="product" id="iphone">
+      <article class="product category-card" data-category="iphone">
         <div class="media">
           <div class="imgFrame">
             <img src="Imagini/1.jpg" alt="iPhone" />
@@ -88,7 +97,7 @@
         </div>
       </article>
 
-      <article class="product" id="ipad">
+      <article class="product category-card" data-category="ipad">
         <div class="media">
           <div class="imgFrame">
             <img src="Imagini/2.jpg" alt="iPad" />
@@ -118,7 +127,7 @@
         </div>
       </article>
 
-      <article class="product" id="macbook">
+      <article class="product category-card" data-category="macbook">
         <div class="media">
           <div class="imgFrame">
             <img src="Imagini/3.jpg" alt="MacBook" />
@@ -148,7 +157,7 @@
         </div>
       </article>
 
-      <article class="product" id="watch">
+      <article class="product category-card" data-category="watch">
         <div class="media">
           <div class="imgFrame">
             <img src="Imagini/4.png" alt="Apple Watch" />
@@ -179,7 +188,13 @@
       </article>
     </section>
 
+    <section class="catalog-section">
+      <div class="catalog-header">
+        <h2 id="catalogTitle">Alege o categorie</h2>
+        <p id="catalogSubtitle">Apasă pe unul dintre tablourile de mai sus pentru a vedea modelele disponibile.</p>
       </div>
+
+      <div id="productsContainer" class="products-container"></div>
     </section>
   </main>
 </main>
