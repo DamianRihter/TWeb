@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -36,7 +37,15 @@
       <h2>Cont utilizator</h2>
 
       <div class="auth-switch">
-        <button type="button" class="auth-tab active" data-target="loginForm">Logare</button>
+       <?php if (isset($_SESSION["username"])): ?>
+  <span class="login-btn" style="display:inline-flex;align-items:center;justify-content:center;cursor:default;">
+    <?php echo htmlspecialchars($_SESSION["username"]); ?>
+  </span>
+  <a href="logout.php" class="login-btn">Ieșire</a>
+<?php else: ?>
+  <button id="loginBtn" class="login-btn" type="button">Logare</button>
+<?php endif; ?>
+
         <button type="button" class="auth-tab" data-target="registerForm">Înregistrare</button>
       </div>
 

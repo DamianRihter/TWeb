@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $email, $username, $parola_hash);
 
     if ($stmt->execute()) {
-        echo "Înregistrare reușită!";
+        header("Location: /Lab1/index.php");
+exit();
     } else {
         echo "Eroare: " . $stmt->error;
     }
