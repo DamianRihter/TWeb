@@ -392,7 +392,6 @@ img{ max-width:100%; display:block; }
   margin-top:18px;
 }
 
-
 .apple-footer{
   margin-top:40px;
   padding:40px 20px 20px;
@@ -513,10 +512,42 @@ img{ max-width:100%; display:block; }
   color:var(--text);
 }
 
-.login-form{
+.auth-switch{
   display:flex;
+  gap:8px;
+  margin-bottom:18px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--stroke);
+  border-radius:12px;
+  padding:6px;
+}
+
+.auth-tab{
+  flex:1;
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  background:transparent;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+.auth-tab.active{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff;
+}
+
+.login-form{
+  display:none;
   flex-direction:column;
   gap:12px;
+}
+
+.login-form.active{
+  display:flex;
 }
 
 .login-form label{

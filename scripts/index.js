@@ -1,4 +1,3 @@
-
 // 3D inclinare la carduri
 document.querySelectorAll(".cat").forEach(card=>{
   card.addEventListener("mousemove", e=>{
@@ -65,20 +64,22 @@ document.querySelectorAll(".btn, .infoPill").forEach(el=>{
 
 //Pulsare la buton
 document.querySelectorAll("button, a").forEach(el => {
-    el.addEventListener("mouseenter", () => {
-        el.style.transform = "scale(1.08)";
-        el.style.transition = "0.2s";
-    });
+  el.addEventListener("mouseenter", () => {
+    el.style.transform = "scale(1.08)";
+    el.style.transition = "0.2s";
+  });
 
-    el.addEventListener("mouseleave", () => {
-        el.style.transform = "scale(1)";
-    });
+  el.addEventListener("mouseleave", () => {
+    el.style.transform = "scale(1)";
+  });
 });
 
-//Logare
+//Logare + Inregistrare
 const loginBtn = document.getElementById("loginBtn");
 const loginModal = document.getElementById("loginModal");
 const closeLogin = document.getElementById("closeLogin");
+const authTabs = document.querySelectorAll(".auth-tab");
+const forms = document.querySelectorAll(".login-form");
 
 if (loginBtn && loginModal && closeLogin) {
   loginBtn.addEventListener("click", () => {
@@ -95,3 +96,16 @@ if (loginBtn && loginModal && closeLogin) {
     }
   });
 }
+
+authTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    authTabs.forEach(item => item.classList.remove("active"));
+    forms.forEach(form => form.classList.remove("active"));
+
+    tab.classList.add("active");
+    const targetForm = document.getElementById(tab.dataset.target);
+    if (targetForm) {
+      targetForm.classList.add("active");
+    }
+  });
+});

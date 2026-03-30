@@ -33,13 +33,32 @@
   <div id="loginModal" class="login-modal">
     <div class="login-box">
       <button id="closeLogin" class="close-login" type="button">&times;</button>
-      <h2>Logare / Înregistrare</h2>
+      <h2>Cont utilizator</h2>
 
-      <form class="login-form">
+      <div class="auth-switch">
+        <button type="button" class="auth-tab active" data-target="loginForm">Logare</button>
+        <button type="button" class="auth-tab" data-target="registerForm">Înregistrare</button>
+      </div>
+
+      <form id="loginForm" class="login-form active">
         <label for="loginInput">Email sau Număr de telefon</label>
-<input type="text" id="loginInput" name="loginInput" placeholder="Introdu emailul sau numărul de telefon" required>
+        <input type="text" id="loginInput" name="loginInput" placeholder="Introdu emailul sau numărul de telefon" required>
+
         <label for="parola">Parolă</label>
         <input type="password" id="parola" name="parola" placeholder="Introdu parola" required>
+
+        <button type="submit" class="submit-login">Loghează-te</button>
+      </form>
+
+      <form id="registerForm" class="login-form register-form">
+        <label for="registerInput">Email sau Număr de telefon</label>
+        <input type="text" id="registerInput" name="registerInput" placeholder="Introdu emailul sau numărul de telefon" required>
+
+        <label for="username">Nume de utilizator</label>
+        <input type="text" id="username" name="username" placeholder="Introdu numele de utilizator" required>
+
+        <label for="registerPassword">Parolă</label>
+        <input type="password" id="registerPassword" name="registerPassword" placeholder="Creează parola" required>
 
         <button type="submit" class="submit-login">Înregistrează-te</button>
       </form>
